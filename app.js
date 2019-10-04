@@ -7,10 +7,9 @@ app.get('/', (req, res) => {
 })
 
 app.get('/teapot', (req, res) => {
-  res
-    .set({ 'X-Custom': 'Custom' })
-    .status(418)
-    .send('I am a teapot')
+  res.set({ 'X-Custom': 'Custom' })
+  res.status(418)
+  res.send('I am a teapot')
 })
 
 app.listen(port, () => {
