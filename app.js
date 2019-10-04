@@ -1,9 +1,18 @@
-const express = require('express');
-const app = express();
-const port = 3000;
+const express = require('express')
+const app = express()
+const port = 3000
 
-app.get('/', (req,res) => {
-  res.send('Hey there I\'m express!');
-});
+app.get('/', (req, res) => {
+  res.send("Hey there I'm express!")
+})
 
-app.listen(port, () => {console.log(`Running running running and listening on port ${port}`)});
+app.get('/teapot', (req, res) => {
+  res
+    .set({ 'X-Custom': 'Custom' })
+    .status(418)
+    .send('I am a teapot')
+})
+
+app.listen(port, () => {
+  console.log(`Running running running and listening on port ${port}`)
+})
