@@ -7,7 +7,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/teapot', (req, res) => {
-  res.set({ 'X-Custom': 'Custom' })
+  res.set( 'X-Custom', 'Custom' )
   res.status(418)
   res.send('I am a teapot')
 })
